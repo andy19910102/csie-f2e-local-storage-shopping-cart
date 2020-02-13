@@ -73,9 +73,35 @@ const products = [
     }
 ];
 
-// 渲染商品
+// 設計渲染商品的函數
 function renderProducts() {
 
 }
 
+// 設計建立單一商品卡片HTML標籤的函數
+function createProductCardElement() {
+    // 產生一個Bootstrap Card的元件
+    // https://getbootstrap.com/docs/4.4/components/card/
+    const cardElement = `
+        <div class="col-md-4">
+            <div class="card">
+                <img src="" class="card-img-top">
+                <form class="card-body">
+                    <h5 class="card-title">商品標題</h5>
+                    <p class="card-text">商品價格: $100</p>
+                    <div class="form-group">
+                        <label>購買數量</label>
+                        <input class="form-control" type="number" min="1" max="20">
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-primary" type="submit">加入購物車</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    `;
+    return cardElement;
+}
+
+// 渲染商品
 renderProducts();
