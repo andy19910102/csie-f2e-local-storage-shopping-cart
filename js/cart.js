@@ -1,5 +1,5 @@
 // 產品列表
-const products = [
+const productList = [
     {
         id: '1',
         title: '產品一',
@@ -66,8 +66,11 @@ const products = [
 ];
 
 // TODO: 設計渲染商品的函數
-function renderProducts() {
-
+function renderProductList() {
+    // 透過迴圈將produstList內的資料一一取出
+    productList.forEach(product => {
+        // console.log('[product]', product)
+    });
 }
 
 // TODO: 設計建立單一商品卡片HTML標籤的函數
@@ -78,7 +81,7 @@ function createProductCardElement() {
         <div class="col-md-4">
             <div class="card">
                 <img src="" class="card-img-top">
-                <form class="card-body">
+                <form class="add-item-form card-body">
                     <h5 class="card-title">商品標題</h5>
                     <p class="card-text">商品價格: $100</p>
                     <div class="form-group">
@@ -95,8 +98,8 @@ function createProductCardElement() {
     return cardElement;
 }
 
-// 渲染商品
-renderProducts();
+// 渲染商品列表至畫面上
+renderProductList();
 
 // 購物車建構式
 function Cart() {
@@ -129,6 +132,31 @@ function Cart() {
     }
     // TODO: 渲染購物車
     this.render = function () {
+        // 選到id是cartTableBody的元素
+        const $tbody = $('#cartTableBody');
+        // 選到id是cartTableFoot的元素
+        const $tfoot = $('#cartTableFoot');
+        // 預設tbody內的內容是空值
+        let tbodyContent = '';
+        // TODO: 將目前購物車的項目逐項取出
 
+        // 將內容渲染至tbody內
     }
 }
+
+// TODO: 建立一個購物車的實例
+
+// TODO: 綁定新增商品至購物車的表單送出事件
+$(".add-item-form").submit(function(e){
+    e.preventDefault();
+    console.log("[準備新增購物車品項]");
+
+});
+
+// TODO: 綁定清空購物車按鈕的點擊事件
+$("#clearCartBtn").click(function(){
+    console.log("[準備清空購物車]");
+
+});
+
+// TODO: 綁定移除單一品項的點擊事件
