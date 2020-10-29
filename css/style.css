@@ -2,6 +2,28 @@
     box-shadow: 0px 5px 10px rgba(0, 0, 0, .2);
 }
 
+#navLinkItem {
+    position: relative;
+}
+
+#cartNumber {
+    width: 30px;
+    height: 30px;
+    background-color: tomato;
+    text-align: center;
+    line-height: 30px;
+    position: absolute;
+    border-radius: 50%;
+    top: -6px;
+    left: 9px;
+    color: white;
+    transform: scale(.6);
+}
+
+#navLinkItem:hover #cartNumber {
+    background-color: rgb(231, 90, 65);
+}
+
 body {
     padding-top: 56px;
 }
@@ -11,8 +33,10 @@ body {
     margin: 0px;
     background-image: url('https://picsum.photos/id/1078/1200/900');
     background-size: cover;
+    background-attachment: fixed;
     color: white;
     position: relative;
+    border-radius: 0;
 }
 
 #header:after {
@@ -36,4 +60,12 @@ body {
     text-shadow: 0 2px 3px rgba(0, 0, 0, .2);
     position: relative;
     z-index: 3;
+}
+
+footer {
+    border-top: 1px solid rgb(206, 206, 206);
+    background-color: #fdfdfd;
+    text-align: center;
+    color: #888;
+    margin-top: 50px;
 }

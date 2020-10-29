@@ -19,14 +19,14 @@ const productList = [
         title: '產品三',
         price: 180,
         img: 'https://picsum.photos/id/1071/1200/600',
-        tags: ['食品']
+        tags: ['食品', '飲料']
     },
     {
         id: '4',
         title: '產品四',
         price: 220,
         img: 'https://picsum.photos/id/1072/1200/600',
-        tags: ['生活用品']
+        tags: ['生活用品', '文具']
     },
     {
         id: '5',
@@ -61,7 +61,7 @@ const productList = [
         title: '產品九',
         price: 520,
         img: 'https://picsum.photos/id/1077/1200/600',
-        tags: ['藥妝']
+        tags: ['藥妝', '保養']
     }
 ];
 
@@ -82,14 +82,21 @@ function createProductCardElement() {
             <div class="card">
                 <img src="" class="card-img-top">
                 <form class="add-item-form card-body">
-                    <h5 class="card-title">商品標題</h5>
-                    <p class="card-text">商品價格: $100</p>
+                    <h5 class="card-title">
+                        商品標題
+                    </h5>
+                    <p class="card-text">
+                        商品價格: $100
+                    </p>
                     <div class="form-group">
                         <label>購買數量</label>
-                        <input class="form-control" type="number" min="1" max="20">
+                        <input class="form-control" type="number" min="1" max="20" required>
                     </div>
                     <div class="form-group">
-                        <button class="btn btn-primary" type="submit">加入購物車</button>
+                        <button class="btn btn-primary" type="submit">
+                            <i class="fas fa-cart-plus"></i> 
+                            加入購物車
+                        </button>
                     </div>
                 </form>
             </div>
