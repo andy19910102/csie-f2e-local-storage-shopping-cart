@@ -112,15 +112,15 @@ renderProductList();
 function Cart() {
     // localStorage key
     this.key = 'example-cart';
-    // 購物車的資料
-    this.data = [];
+    // 購物車的品項
+    this.itemList = [];
     // TODO: 初始化購物車
     this.initCart = function () {
 
     }
     // TODO: 傳入商品id與數量並新增商品至購物車
     this.addItem = function (pid, amount) {
-        
+
         // TODO: 建構一個購物車品項資料
         // { title: 品名, price: 單價, amount: 數量, createdAt: 新增時間 }
 
@@ -151,17 +151,18 @@ function Cart() {
     }
 }
 
-// TODO: 建立一個購物車的實例
+// 建立一個購物車的實例
+const cart = new Cart();
 
 // TODO: 綁定新增商品至購物車的表單送出事件
-$(".add-item-form").submit(function(e){
+$(".add-item-form").submit(function (e) {
     e.preventDefault();
     console.log("[準備新增購物車品項]");
 
 });
 
 // TODO: 綁定清空購物車按鈕的點擊事件
-$("#clearCartBtn").click(function(){
+$("#clearCartBtn").click(function () {
     console.log("[準備清空購物車]");
 
 });
