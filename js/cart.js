@@ -4,74 +4,57 @@ const productList = [
         id: '1',
         title: '產品一',
         price: 10,
-        img: 'https://picsum.photos/id/999/1200/600',
-        tags: ['生活用品', '工具']
+        img: 'https://picsum.photos/id/999/1200/600'
     },
     {
         id: '2',
         title: '產品二',
         price: 60,
-        img: 'https://picsum.photos/id/1070/1200/600',
-        tags: ['藥妝']
+        img: 'https://picsum.photos/id/1070/1200/600'
     },
     {
         id: '3',
         title: '產品三',
         price: 180,
-        img: 'https://picsum.photos/id/1071/1200/600',
-        tags: ['食品', '飲料']
+        img: 'https://picsum.photos/id/1071/1200/600'
     },
     {
         id: '4',
         title: '產品四',
         price: 220,
-        img: 'https://picsum.photos/id/1072/1200/600',
-        tags: ['生活用品', '文具']
+        img: 'https://picsum.photos/id/1072/1200/600'
     },
     {
         id: '5',
         title: '產品五',
         price: 360,
-        img: 'https://picsum.photos/id/1073/1200/600',
-        tags: ['工具']
+        img: 'https://picsum.photos/id/1073/1200/600'
     },
     {
         id: '6',
         title: '產品六',
         price: 360,
-        img: 'https://picsum.photos/id/1074/1200/600',
-        tags: ['食品']
+        img: 'https://picsum.photos/id/1074/1200/600'
     },
     {
         id: '7',
         title: '產品七',
         price: 400,
-        img: 'https://picsum.photos/id/1075/1200/600',
-        tags: ['生活用品', '工具']
+        img: 'https://picsum.photos/id/1075/1200/600'
     },
     {
         id: '8',
         title: '產品八',
         price: 450,
-        img: 'https://picsum.photos/id/1076/1200/600',
-        tags: ['生活用品', '工具']
+        img: 'https://picsum.photos/id/1076/1200/600'
     },
     {
         id: '9',
         title: '產品九',
         price: 520,
-        img: 'https://picsum.photos/id/1077/1200/600',
-        tags: ['藥妝', '保養']
+        img: 'https://picsum.photos/id/1077/1200/600'
     }
 ];
-
-// TODO: 設計渲染商品的函數
-function renderProductList() {
-    // 透過迴圈將produstList內的資料一一取出
-    productList.forEach(product => {
-        // console.log('[product]', product)
-    });
-}
 
 // TODO: 設計建立單一商品卡片HTML標籤的函數
 function createProductCardElement() {
@@ -105,8 +88,11 @@ function createProductCardElement() {
     return cardElement;
 }
 
-// 渲染商品列表至畫面上
-renderProductList();
+// TODO: 渲染商品
+// 透過迴圈將produstList內的資料一一取出
+productList.forEach(product => {
+    // console.log('[product]', product)
+});
 
 // 購物車建構式
 function Cart() {
@@ -146,8 +132,25 @@ function Cart() {
         // 預設tbody內的內容是空值
         let tbodyContent = '';
         // TODO: 將目前購物車的項目逐項取出
+        this.itemList.forEach((item, idx) => {
+            // 將內容渲染至tbody內
+            const tr = `<tr>
+                <td>  </td>
+                <td class="text-right"> </td>
+                <td class="text-right"> </td>
+                <td class="text-right"> </td>
+            </tr>`;
 
-        // 將內容渲染至tbody內
+        });
+
+        // 顯示總金額
+        $tfoot.html(`
+            <tr>
+                <td>總金額</td>
+                <td colspan="3"> </td>
+            </tr>
+        `);
+
     }
 }
 
@@ -158,13 +161,17 @@ const cart = new Cart();
 $(".add-item-form").submit(function (e) {
     e.preventDefault();
     console.log("[準備新增購物車品項]");
+    // 取得送出表單的商品ID
+
+    // 取得選擇的商品數量
 
 });
 
 // TODO: 綁定清空購物車按鈕的點擊事件
 $("#clearCartBtn").click(function () {
     console.log("[準備清空購物車]");
-
+    // 清空購物車
+    cart.emptyCart();
 });
 
 // TODO: 綁定移除單一品項的點擊事件
