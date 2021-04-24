@@ -97,11 +97,16 @@ productList.forEach(product => {
 // 購物車建構式
 function Cart() {
     // localStorage key
-    this.key = 'example-cart';
+    this.storageKey = 'example-cart';
     // 購物車的品項
     this.itemList = [];
     // TODO: 初始化購物車
     this.initCart = function () {
+        // 透過 localStorage key 取得過去建立的品項
+
+        // 如果過去建立的品項存在?轉回陣列格式並設定為此購物車預設的itemList
+
+        // 渲染畫面
 
     }
     // TODO: 傳入商品id與數量並新增商品至購物車
@@ -135,10 +140,13 @@ function Cart() {
         this.itemList.forEach((item, idx) => {
             // 將內容渲染至tbody內
             const tr = `<tr>
-                <td>  </td>
+                <td>
+                    <button class="remove-item-btn btn btn-danger btn-sm">&times</button>
+                    品名
+                </td>
+                <td class="text-right">$ </td>
                 <td class="text-right"> </td>
-                <td class="text-right"> </td>
-                <td class="text-right"> </td>
+                <td class="text-right">$ </td>
             </tr>`;
 
         });
@@ -175,3 +183,6 @@ $("#clearCartBtn").click(function () {
 });
 
 // TODO: 綁定移除單一品項的點擊事件
+$(".remove-item-btn").click(function () {
+    console.log("準備移除品項");
+});
